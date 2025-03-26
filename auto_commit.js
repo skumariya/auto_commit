@@ -23,7 +23,8 @@ async function commitAndPush() {
 
 // Run the script 10 times with intervals
 async function runCommits() {
-  for (let i = 0; i < 10; i++) {
+  let commitNums = Math.floor(Math.random() * 10) + 1;
+  for (let i = 0; i < commitNums; i++) {
     await commitAndPush();
     await new Promise((resolve) => setTimeout(resolve, 3000)); // 3 sec interval
   }
